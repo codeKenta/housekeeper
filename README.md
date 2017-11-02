@@ -6,7 +6,7 @@ Created by Kenneth Österholm nov 2017.
 hello@osterholms.se
 
 
-###Description
+### Description
 
 Project for the course Web Development for Mobile Devices in Mid Swede University.
 This application is a reporting system for hotels and are used for changing the cleaned status of a room.
@@ -21,7 +21,7 @@ This application is a reporting system for hotels and are used for changing the 
   <li>Filter rooms by their status (All, Cleaned or Not Cleanet).</li>
 </ul>
 
-###Log in with existing user in the deployed app</h3>
+### Log in with existing user in the deployed app</h3>
 
 <strong>URL</strong> <br>
 https://housekeepermobile.herokuapp.com
@@ -34,9 +34,9 @@ password: password <br>
 Username: carson<br>
 Password: password<br>
 
-###Keywords
+### Keywords
 
 NodeJS, Express, MongoDB, Heroku
 
-###Example
+### Example
 ![Example of app](/mockups/mockup.jpg?raw=true)
