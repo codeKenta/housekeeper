@@ -13,11 +13,13 @@ This application is a reporting system for hotels and are used for changing the 
 
 
 <h3>Features</h3>
-1. Sign Up as an admin for a Hotel, or Log in with existing user.
-2. Admins can add rooms.
-3. Admins can add housekeepers (the cleaners).
-4. Change the cleaned status of rooms (Cleaned or Not Cleaned).
-5. Filter rooms by their status (All, Cleaned or Not Cleanet).
+<ul>
+  <li>Sign Up as an admin for a Hotel, or Log in with existing user.</li>
+  <li>Admins can add rooms.</li>
+  <li>Admins can add housekeepers (the cleaners).</li>
+  <li>Change the cleaned status of rooms (Cleaned or Not Cleaned).</li>
+  <li>Filter rooms by their status (All, Cleaned or Not Cleanet).</li>
+</ul>
 
 <h3>Log in with existing user in the deployed app</h3>
 
