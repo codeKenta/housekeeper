@@ -1,5 +1,5 @@
 # housekeeper
-http://housekeepermobile.heroku.com
+https://housekeepermobile.herokuapp.com
 
 Created by Kenneth Österholm nov 2017.
 
@@ -22,7 +22,7 @@ This application is a reporting system for hotels and are used for changing the 
 <h3>Log in with existing user in the deployed app</h3>
 
 URL
-http://housekeepermobile.heroku.com
+https://housekeepermobile.herokuapp.com
 
 Login as Admin
 Username: grandhotel
