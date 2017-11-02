@@ -23,7 +23,7 @@ This application is a reporting system for hotels and are used for changing the 
 
 <h3>Log in with existing user in the deployed app</h3>
 
-URL
+<strong>URL</strong> <br>
 https://housekeepermobile.herokuapp.com
 
 <strong>Login as Admin</strong> <br>
@@ -36,4 +36,4 @@ Password: password<br>
 
 <h3>Keywords</h3>
 
-NodeJS, Express, MongoDB
+NodeJS, Express, MongoDB, Heroku
