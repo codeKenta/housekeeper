@@ -39,8 +39,7 @@ app.use(flash()); // Flash messeges for displaying success and error messeges to
 // ===============================================
 
 // Sets the URI to the server environment variable that are stored on heroku which connects to the public database
-// Adding a fallback string that connects to the developer database which is used for local development
-var uri = process.env.MONGODB_URI || "mongodb://housekeeper:sexlaxarienlaxask@ds227045.mlab.com:27045/housekeeper_dev";
+var uri = process.env.MONGODB_URI;
 
 mongoose.Promise = global.Promise
 mongoose.connect(uri);
