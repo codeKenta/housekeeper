@@ -26,14 +26,13 @@ This application is a reporting system for hotels and are used for changing the 
 URL
 https://housekeepermobile.herokuapp.com
 
-Login as Admin
-Username: grandhotel
-password: password
-
-Login as Housekeeper (cleaner)
-Username: carson
-Password: password
-
+<strong>Login as Admin</strong> <br>
+Username: grandhotel <br>
+password: password <br>
+<br>
+<strong>Login as Housekeeper (cleaner)</strong><br>
+Username: carson<br>
+Password: password<br>
 
 <h3>Keywords</h3>
 
