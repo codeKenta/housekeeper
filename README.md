@@ -37,3 +37,6 @@ Password: password<br>
 <h3>Keywords</h3>
 
 NodeJS, Express, MongoDB, Heroku
+
+<h3>Example</h3>
+![Example of app](/mockups/mockup.jpg?raw=true)
