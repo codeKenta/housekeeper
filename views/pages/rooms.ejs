@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="loggedin" lang="en">
+<head>
+  <% include ../partials/header %>
+</head>
+
+<body>
+<% include ../partials/nav %>
+
+  <div class="content-container">
+    <div class="top-container flex space-between">
+      <h5 class="title">Rooms</h5>
+
+      <%# Only admins can add new rooms %>
+
+      <div class="btn-wrapper">
+        <a id="refresh-btn" class="button"><i class="material-icons">refresh</i></a>
+        <% if(currentUser.admin === true) { %>
+
+      <a id="toggle-edit-room-form-btn" class="button"><i class="material-icons">create</i></a>
+      <a id="toggle-add-room-form-btn" class="button"><i class="material-icons">add</i></a>
+        <% } %>
+    </div>
+
+  </div>
+
+  <form class="filter-section container-padding">
+
+    <div class="filter-button-group">
+      <input class="filter with-gap" name="filter" type="radio" id="all" />
+      <label for="all">All</label>
+    </div>
+
+    <div class="filter-button-group">
+      <input class="filter with-gap" name="filter" type="radio" id="cleaned" />
+      <label for="cleaned">Cleaned</label>
+    </div>
+
+    <div class="filter-button-group">
+      <input class="filter with-gap" name="filter" type="radio" id="notCleaned"  />
+      <label for="notCleaned">Not Cleaned</label>
+    </div>
+
+  </form>
+
+    <%# Only admins can add and edit rooms %>
+    <% if(currentUser.admin === true) { %>
+      <div class="add-room">
+        <form id="add-room-form" class="room-form"  method="POST">
+          <h5 class="title form-title">Add Room</h5>
+
+            <div class="flex space-between">
+              <div class="form-group">
+                <label for="editroomname">Room Name / Number</label>
+                <input name="roomname" id="roomname" type="text">
+              </div>
+              <a id="add-room-btn" class="waves-effect waves-light btn">Save</a>
+            </div>
+
+        </form>
+      </div>
+
+      <div class="edit-room">
+        <form id="edit-room-form" class="room-form" method="POST">
+          <h5 class="title form-title">Edit Room</h5>
+
+            <div class="">
+              <div class="form-group">
+                <label for="edit-roomname">Room Name / Number</label>
+                <input name="roomname" id="edit-roomname" type="text">
+              </div>
+
+                <a id="edit-room-btn" class="waves-effect waves-light btn">Save</a>
+                <a id="remove-room-btn" class="waves-effect waves-light red btn">Remove</a>
+
+            </div>
+
+        </form>
+      </div>
+    <% } %>
+
+
+
+    <div class="table-container">
+
+      <table class="table" id="room-table">
+        <thead>
+          <tr>
+            <td>Room</td>
+            <td>Cleaned</td>
+            <td class="hide-small">Cleaned by</td>
+            <td class="hide-small">Last cleaned</td>
+          </tr>
+        </thead>
+        <tbody id="rooms-tbody">
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <div class="change-status">
+    <i id="close-change-status" class="material-icons">close</i>
+    <h5 class="title change-status-title">Change Status</h5>
+    <div class="btn-wrapper flex space-between">
+      <a id="yes" class="waves-effect waves-light btn">Cleaned</a>
+      <a id="no" class="red accent-3 waves-effect waves-light btn">Not Cleaned</a>
+    </div>
+
+  </div>
+
+
+  <script src="./scripts/position_bottom.js"></script>
+  <script src="./scripts/rooms.js"></script>
+
+
+<% include ../partials/footer %>

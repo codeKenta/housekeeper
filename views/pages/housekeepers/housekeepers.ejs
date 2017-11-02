@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="loggedin" lang="en">
+<head>
+  <% include ./../../partials/header %>
+</head>
+
+<body>
+<% include ../../partials/nav %>
+
+  <div class="content-container">
+    <div class="top-container flex space-between">
+      <h5 class="title">Housekeepers</h5>
+
+      <div class="btn-wrapper">
+        <a id="goto-edit-housekeeper-form-btn" href="" class="button"><i class="material-icons">create</i></a>
+        <a id="goto-add-housekeeper-form-btn" class="button" href="housekeepers/new"><i class="material-icons">add</i></a>
+      </div>
+    </div>
+
+
+    <div class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <td>Username</td>
+            <td>First name</td>
+            <td>Last name</td>
+            <td class='hide-small'>E-mail</td>
+          </tr>
+        </thead>
+
+        <% housekeepers.forEach(function(r) { %>
+          <tr id="<%= r._id %>" class="table-row housekeeper-row">
+
+            <td><%= r.username %></td>
+            <td><%= r.firstname %></td>
+            <td><%= r.lastname%></td>
+            <td class='hide-small'><%= r.email%></td>
+          </tr>
+            <% }); %>
+
+      </table>
+
+    </div>
+  </div>
+
+  <script src="./scripts/housekeepers.js"></script>
+
+
+<% include ../../partials/footer %>

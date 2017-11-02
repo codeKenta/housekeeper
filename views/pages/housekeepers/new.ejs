@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html class="loggedin" lang="en">
+<head>
+  <% include ./../../partials/header %>
+</head>
+
+<body>
+<% include ../../partials/nav %>
+
+  <div class="content-container">
+    <div class="top-container flex space-between">
+      <h5 class="title">
+      <% if (edit === true) { %>
+          Edit
+        <%  } else if (edit === false) { %>
+        Add
+        <%  }  %>
+         Housekeeper</h5>
+
+         <div class="btn-wrapper">
+           <a id="back-to-housekeepers-btn" href="/housekeepers" class="button"><i class="material-icons">arrow_back</i></a>
+         </div>
+    </div>
+
+
+
+    <div class="forms-container">
+      <form class="housekeeper-form" id="edit-housekeeper-form" action="/housekeepers/<% if (edit === true) { %><%=  housekeeper._id %>?_method=PUT<%  } %>" method="post">
+
+        <% if(error && error.length > 0){ %>
+              <div class="flash-message error" role="alert">
+                  <%= error %>
+              </div>
+        <% } %>
+
+        <h5 class="form-title">User Info</h5>
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input class="textfield" name ="username" id="username" type="text"
+          value="<% if (edit === true) { %><%=housekeeper.username%><%  } %>">
+        </div>
+
+        <div class="form-group">
+          <label for="firstname">First name</label>
+          <input class="textfield" name="firstname" id="firstname" type="text"
+          value="<% if (edit === true) { %><%=  housekeeper.firstname %><%  } %>">
+        </div>
+
+        <div class="form-group">
+          <label for="lastname">Last name</label>
+          <input class="textfield"  name="lastname" id="lastname" type="text"
+          value="<% if (edit === true) { %><%=  housekeeper.lastname %><%  } %>">
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input name="email" id="email" type="email" class="validate textfield"
+          value="<% if (edit === true) { %><%=  housekeeper.email %><%  } %>">
+        </div>
+
+        <% if (edit === true) { %>
+          <div class="form-group checkbox">
+          <input name="admin" value=true type="checkbox" id="admin" />
+            <label for="admin">Adminize Housekeeper</label>
+          </div>
+          <button class="waves-effect waves-light btn">Update</button>
+          </form>
+          <form class="housekeeper-form" id="edit-password-form">
+          <h5 class="form-title">Edit Password</h5>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input class="textfield" name="password" id="password" type="password">
+          </div>
+
+          <div class="form-group">
+            <label for="password-repeat">Repeat Password</label>
+            <input class="textfield" name="passwordrepeat" id="password-repeat" type="password">
+          </div>
+
+          <button class="waves-effect waves-light btn">Update Password</button>
+
+          </form>
+
+          <form class="housekeeper-form" id="delete-housekeeper-form" action="/housekeepers/<% if (edit === true) { %><%=  housekeeper._id %>?_method=DELETE<%  } %>" method="post">
+            <h5 class="form-title">Remove Housekeeper</h5>
+            <a id="remove-housekeeper-btn" class="waves-effect waves-light red btn">Remove</a>
+            <div id="remove-screen-overlay">
+              <div id="remove-alert">
+                <span>Are you sure you want to remove <strong><%=housekeeper.username%></strong>?</span>
+                <div class="btn-wrapper">
+                  <button id="remove-housekeeper-yes" class="waves-effect waves-light red btn">Remove!</button>
+                  <a id="remove-housekeeper-no" class="waves-effect waves-light teal btn">No!</a>
+                </div>
+              </div>
+            </div>
+
+          </form>
+        <%  } else {%>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input class="textfield" name="password" id="password" type="password">
+        </div>
+
+        <div class="form-group">
+          <label for="password-repeat">Repeat Password</label>
+          <input class="textfield" name="passwordrepeat" id="password-repeat" type="password">
+        </div>
+
+        <button class="waves-effect waves-light btn">Add housekeeper</button>
+
+      </form>
+      <%  } %>
+    </div>
+  </div>
+
+<script src="../../scripts/removeUserAlert.js"></script>
+
+<% include ../../partials/footer %>

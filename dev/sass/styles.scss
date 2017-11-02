@@ -1,0 +1,554 @@
+@import "variables";
+@import "mixin";
+
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script');
+
+/*
+======================
+GENERAL ==============
+======================
+*/
+
+html, body {
+  height: 100%;
+  margin: 0;
+  color: $textGrey;
+}
+
+.btn {
+  box-shadow: none !important;
+}
+
+.brand {
+  font-family: 'Oleo Script', cursive;
+}
+
+.container-padding {
+  padding: 0 20px;
+}
+
+.title {
+  font-weight: 200;
+}
+
+.flex {
+  display: flex;
+}
+.space-between {
+  justify-content: space-between;
+}
+
+.hide-small {
+  @include mediaMaxWidth(460px){
+    display: none;
+  }
+}
+
+input {
+  background: white !important;
+  font-weight: 200 !important;
+  padding-left: 10px !important;
+}
+
+label {
+  font-weight: 200;
+}
+
+/*
+======================
+NAVIGATION ===========
+======================
+*/
+
+nav {
+  height: 56px !important;
+  line-height: 56px !important;
+  padding-left: 20px;
+  background: darken($dark,2);
+  .left-content {
+
+    padding-top: 8px;
+    .brand {
+      margin: 0;
+      margin-bottom: -20px;
+      font-size: 20px;
+    }
+    .logged-in {
+
+      font-size: 12px;
+      font-weight: 300;
+      span {
+        font-weight: 500;
+      }
+    }
+
+  }
+
+  .right-content {
+    display: flex;
+    justify-content: flex-start;
+
+    .item.active-nav {
+        background: teal !important;
+    }
+    .item.link {
+      @include mediaMaxWidth(359px){
+        padding: 0 8px !important;
+      }
+      display: flex;
+      padding: 0 15px;
+      &:active {
+        background: lighten($dark, 15);
+      }
+
+      .link-text {
+        @include mediaMaxWidth(680px){
+          display: none;
+        }
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  .item.link {
+    &:hover {
+      background: lighten($dark, 3);
+    }
+  }
+  .item.link.logout {
+    &:hover {
+      background: $no;
+    }
+  }
+}
+
+/*
+======================
+LANDING PAGE =========
+======================
+*/
+
+html.landing {
+  @include mediaMinWidth(501px) {
+    background: url("../images/landing_lg.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  @include mediaMaxWidth(500px) {
+    background: url("../images/landing_sm.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+
+.landing-container {
+  @include mediaMaxWidth(650px){
+    .left {
+      width: 100% !important;
+      .brand {
+        margin-top: 20px !important;
+        font-size: 14vw !important;
+      }
+    }
+    .landing-sidebar {
+      margin: 0 auto;
+      position: static;
+      width: 90%;
+      margin-bottom: 40px;
+    }
+
+  }
+  z-index: 1;
+  .left {
+    width: calc(100% - 300px);
+    .brand {
+      width: 100% !important;
+      text-align: center;
+      margin-top: 30vh;
+      color: white;
+      padding: 20px;
+      width: 320px;
+      font-size: 7vw;
+    }
+  }
+
+}
+
+.landing-sidebar {
+  padding-top: 25px;
+  overflow-y: auto;
+  z-index: 2;
+  width: 300px;
+  height: 100%;
+  background: $lightGrey;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  .sidebar-links {
+    display: flex;
+    justify-content: center;
+
+    .link {
+      font-size:16px;
+      margin-left: 20px;
+      color: $textGrey;
+      &:active {
+        color: lightgrey;
+      }
+          @media (hover: hover) {
+            &:hover {
+              text-decoration: underline;
+              color: white;
+            }
+          }
+    }
+  }
+}
+
+.landing-sidebar form {
+  font-weight: 200;
+  padding: 20px;
+  width: 100%;
+
+  .form-title {
+    color: grey;
+    font-weight: 200;
+    font-size: 30px;
+    margin-top: 0;
+  }
+
+  .form-group {
+    input {
+      box-sizing: border-box;
+      margin-top: 10px !important;
+      font-size: 20px !important;
+    }
+    label {
+      font-size: 16px;
+    }
+  }
+
+  .btn {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 45px;
+    width: 170px;
+    font-weight: 300;
+    font-size: 20px;
+    text-transform: none;
+  }
+}
+
+#signup-form {
+  display: none;
+}
+
+
+
+/*
+================================
+START PAGE , LOGGED IN =========
+================================
+*/
+
+html.loggedin {
+  background: $lightGrey
+}
+
+
+  .content-container {
+    .top-container {
+      @include contentTopContainer($dark)
+      .btn-wrapper {
+        position: relative;
+        top: 10px;
+
+      }
+      .button {
+        margin-left: 15px;
+        margin-top: 0;
+        color: white;
+
+        &:active {
+          color: teal;
+        }
+        i {
+          font-size: 30px;
+        }
+      }
+
+      #toggle-edit-room-form-btn {
+        display: none;
+      }
+    }
+  }
+
+
+// Tables
+
+.table-container {
+  padding: 10px 20px 30px 20px;
+}
+.table {
+  padding: 20px !important;
+
+  thead {
+    font-weight: 400;
+  }
+
+  tr {
+    td {
+      &:first-of-type {
+        text-align: left;
+      }
+
+      text-align: center;
+      padding: 10px;
+      border-radius: 0;
+    }
+    .yes {
+      color: $yes;
+    }
+    .no {
+      color: $no;
+    }
+  }
+
+  .table-row {
+    border-bottom: 1px solid lightgrey;
+    font-weight: 300;
+  }
+  .room-row.selected-room {
+    background: teal;
+    color: white;
+
+    .yes, .no {
+      color: white;
+    }
+  }
+  .selected-housekeeper {
+    background: teal;
+    color: white;
+  }
+}
+/*
+==============
+ROOMS ========
+==============
+Styles specific for room-pages
+*/
+.filter-section {
+  background: lighten($dark, 2);
+  color: lightgrey;
+  display: flex;
+  justify-content: flex-start;
+  border-top: 1px solid lighten($dark, 7);
+  .filter-button-group {
+    @include mediaMaxWidth(350px){
+      padding: 10px 11px;
+      label {
+        padding-left: 26px;
+      }
+    }
+    @include mediaMaxWidth(400px){
+      padding: 10px 15px;
+    }
+    padding: 10px 20px;
+    border-left: 1px solid lighten($dark, 7);
+
+    &:first-of-type {
+      padding-left: 0;
+      border: none;
+    }
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+}
+
+.room-form {
+  display: none;
+  padding: 20px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid lightgrey;
+  background: $lightGrey;
+  .title {
+    margin-top: 0;
+  }
+
+  .form-group {
+    flex: 1 1 300px;
+  }
+
+  .btn-wrapper {
+    .btn {
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      top: 0;
+    }
+  }
+  .btn {
+    position: relative;
+    top: 23px;
+    margin-left: 30px;
+    flex: 1 1 100px;
+  }
+
+}
+
+
+#edit-room-form {
+  @include mediaMaxWidth(359px){
+    input[type='text'] {
+      width: 95% !important;
+    }
+    .btn {
+      width: 45% !important;
+      &:first-of-type {
+        margin-right: 8% !important;
+      }
+    }
+  }
+
+  input[type='text'] {
+    display: block;
+    width: 300px;
+  }
+
+  .btn {
+    margin: 0;
+    position: static;
+    &:first-of-type{
+      margin-left: 0;
+      margin-right: 10px;
+    }
+    width: 150px;
+  }
+}
+
+.change-status {
+  display: none;
+  text-align: center;
+  padding: 20px;
+
+  z-index: 5;
+  height: 150px;
+  background: lighten($dark,4);
+  position: fixed;
+  color: lightgrey;
+  @include boxShadow(3);
+
+  i {
+    color: grey;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    &:active {
+      color: teal;
+    }
+  }
+
+  .btn-wrapper {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    .btn {
+      margin-right: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .edit-room{
+      margin-top: 50px;
+    }
+  }
+}
+
+/*
+HOUSEKEEPERS
+*/
+.forms-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.housekeeper-form {
+  width: 100%;
+  max-width: 350px;
+
+  .form-title {
+    font-weight: 200;
+  }
+  border-bottom: 1px solid lightgrey;
+  padding: 20px;
+  .textfield {
+    width: 95% !important;
+    max-width: 400px;
+    display: block;
+  }
+
+  .btn {
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+  .form-group.checkbox {
+    margin: 10px 0;
+  }
+}
+
+#goto-edit-housekeeper-form-btn {
+  display: none;
+}
+
+#remove-screen-overlay {
+  position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.6);
+    z-index:5;
+    width:100%;
+    height:100%;
+    display:none;
+
+    #remove-alert {
+      display: block;
+      padding: 20px 0;
+      width: 90%;
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      position: relative;
+      top: 30%;
+      text-align: center;
+      .btn-wrapper {
+        margin-top: 20px;
+      }
+      .btn:first-of-type {
+        margin-left: 20px;
+      }
+    }
+}
+
+/* FLASH MESSAGES */
+
+.flash-message {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+
+  &.error {
+    background: lighten($no, 8);
+  }
+  &.success {
+    background: lighten($yes, 3);
+  }
+}

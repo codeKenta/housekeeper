@@ -1,0 +1,38 @@
+<script>
+// Clears the show Form session variable when user is logged in.
+sessionStorage.removeItem('showForm');
+</script>
+
+<nav class="navigation flex space-between">
+  <div class="left-content">
+    <h3 class="brand">Housekeeper</h3>
+    <span class="logged-in">Logged in as <span><%=currentUser.username %></span></span>
+  </div>
+  <div class="right-content">
+
+    <a class="item link<%if(activeNav==='rooms'){%> active-nav<%}%>"
+      href="/rooms">
+      <i class="material-icons">home</i>
+      <span class="link-text">Rooms</span>
+    </a>
+
+    <% if (currentUser.admin === true) { %>
+    <a class="item link<%if (activeNav==='housekeepers'){%> active-nav<%}%>"
+      href="/housekeepers">
+      <i class="material-icons">people</i>
+      <span class="link-text">Housekeepers</span>
+    </a>
+    <% } %>
+
+    <a class="item link<%if(activeNav==='myaccount'){%> active-nav<%}%>"
+      href="/myaccount/<%=currentUser._id%>/edit">
+      <i class="material-icons">face</i>
+      <span class="link-text">My Account</span>
+    </a>
+
+    <a class="item link logout" href="/logout">
+      <i class="material-icons">exit_to_app</i>
+      <span class="link-text">Log out</span>
+    </a>
+  </div>
+</nav>

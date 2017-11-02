@@ -1,0 +1,51 @@
+///////////////////
+// MEDIA QUERIES
+///////////////////
+@mixin mediaMaxWidth($maxWidth) {
+  @media only screen and (max-width: $maxWidth) {
+    @content;
+  }
+}
+
+@mixin mediaMinWidth($minWidth) {
+  @media only screen and (min-width: $minWidth) {
+    @content;
+  }
+}
+
+@mixin mediaMinMaxWidth($minWidth, $maxWidth) {
+  @media only screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+    @content;
+  }
+}
+
+
+///////////////////
+// Repetetive Styles
+///////////////////
+
+@mixin contentTopContainer($bg) {
+  width: 100%;
+  background: $bg;
+  color: white;
+  padding: 10px 20px;
+}
+
+///////////////////
+// Effects
+///////////////////
+
+// Different box shadows
+@mixin boxShadow($num){
+  @if $num == 1 { box-shadow:
+                    0px 4px 3px rgba(0,0,0,0.1),
+                    0px 5px 7px rgba(0,0,0,0.1); }
+  @if $num == 2 { box-shadow: 0px 5px 7px rgba(0,0,0,0.1);}
+
+  @if $num == 3 { box-shadow:
+    0 // X
+    0 // Y
+    5px // edge
+    0 // Spread
+    rgba(0,0,0,0.2);}
+}
