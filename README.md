@@ -5,7 +5,7 @@ Created by Kenneth Österholm nov 2017.
 hello@osterholms.se
 
 
-DESCRIPTION
+<h2>DESCRIPTION</h2>
 
 Project for the course Web Development for Mobile Devices in Mid Swede University.
 This application is a reporting system for hotels and are used for changing the cleaned status of a room.
