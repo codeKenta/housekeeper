@@ -39,4 +39,4 @@ Password: password<br>
 NodeJS, Express, MongoDB, Heroku
 
 ### Example
-![Example of app](/mockup/mockups.jpg?raw=true)
+![Example of app](/mockups/mockup.jpg?raw=true)
