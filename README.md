@@ -38,5 +38,5 @@ Password: password<br>
 
 NodeJS, Express, MongoDB, Heroku
 
-### Example
-![Example of app](/mockups/mockup.jpg?raw=true)
+### Promo
+![Example of app](/promoimage/promo.jpg?raw=true)
