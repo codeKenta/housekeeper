@@ -8,7 +8,7 @@ hello@osterholms.se
 
 ### Description
 
-Project for the course Web Development for Mobile Devices in Mid Swede University.
+Project for the course Web Development for Mobile Devices in Mid Sweden University.
 This application is a reporting system for hotels and are used for changing the cleaned status of a room.
 
 
